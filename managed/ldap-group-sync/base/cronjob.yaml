@@ -19,7 +19,8 @@ spec:
             - -c
             - oc adm groups sync --confirm --sync-config=/ldap-sync/config/ldap-group-sync.yaml
               $([ -s /ldap-sync/whitelist/whitelist.txt ] && echo --whitelist=/ldap-sync/whitelist/whitelist.txt)
-            image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
+            #image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
+            image: registry.redhat.io/openshift4/ose-cli:v4.10
             name: cronjob-ldap-group-sync
             volumeMounts:
             - name: ldap-sync-config
