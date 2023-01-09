@@ -4,7 +4,7 @@ resources:
 - clusterrole.yaml
 - clusterrolebinding.yaml
 - configmap-ldap-sync-config.yaml
-- configmap-opentlc-ipa-tls-ca.yaml
+#- configmap-opentlc-ipa-tls-ca.yaml
 - cronjob.yaml
 - namespace.yaml
 - serviceaccount.yaml

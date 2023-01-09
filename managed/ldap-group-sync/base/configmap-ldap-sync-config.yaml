@@ -8,28 +8,24 @@ data:
   ldap-group-sync.yaml: |
     kind: "LDAPSyncConfig"
     apiVersion: "v1"
-    url: "ldaps://ipa.shared.example.opentlc.com"
-    insecure: false
-    bindDN: "uid=admin,cn=users,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com"
+    url: ldap://192.168.1.10:389/DC=konsalt,DC=info?sAMAccountName?sub
+    bindDN: CN=svcintuser,OU=Konsalt,DC=konsalt,DC=info
     bindPassword:
       file: "/ldap-sync/secrets/bindPassword"
-    ca: "/ldap-sync/ca/ca.crt"
+    insecure: true
     rfc2307:
       groupsQuery:
-        baseDN: "cn=groups,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com"
-        scope: "sub"
-        derefAliases: "never"
-        filter: "(objectClass=groupofnames)"
-        pageSize: 0
-      groupUIDAttribute: "dn"
-      groupNameAttributes: ["cn"]
-      groupMembershipAttributes: ["member"]
+        baseDN: DC=konsalt,DC=info
+        derefAliases: never
+        filter: '(|(cn=REDHAT*))'
+      groupUIDAttribute: dn
+      groupNameAttributes:
+      - cn
+      groupMembershipAttributes:
+      - member
       usersQuery:
-        baseDN: "cn=users,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com"
-        scope: "sub"
-        derefAliases: "never"
-        pageSize: 0
-      userNameAttributes: ["uid"]
-      userUIDAttribute: "dn"
-      tolerateMemberNotFoundErrors: true
-      tolerateMemberOutOfScopeErrors: true
+        baseDN: DC=konsalt,DC=info
+        derefAliases: never
+      userUIDAttribute: dn
+      userNameAttributes:
+      - sAMAccountName

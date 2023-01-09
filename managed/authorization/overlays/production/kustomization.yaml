@@ -14,4 +14,4 @@ patches:
   patch: |-
     - op: replace
       path: /subjects/0/name
-      value: openshift-cluster-admins-prod
+      value: REDHAT_ADMINS

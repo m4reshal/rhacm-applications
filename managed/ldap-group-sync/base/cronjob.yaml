@@ -26,8 +26,8 @@ spec:
               mountPath: /ldap-sync/config
             - name: ldap-sync-whitelist
               mountPath: /ldap-sync/whitelist
-            - name: ldap-sync-ca
-              mountPath: /ldap-sync/ca
+            #- name: ldap-sync-ca
+            #  mountPath: /ldap-sync/ca
             - name: ldap-bind-password
               mountPath: /ldap-sync/secrets
           dnsPolicy: ClusterFirst
@@ -42,9 +42,9 @@ spec:
           - name: ldap-sync-whitelist
             configMap:
               name: ldap-sync-whitelist
-          - name: ldap-sync-ca
-            configMap:
-              name: opentlc-ipa-tls-ca
+          #- name: ldap-sync-ca
+          #  configMap:
+          #    name: opentlc-ipa-tls-ca
           - name: ldap-bind-password
             secret:
               secretName: ldap-bind-password

@@ -6,7 +6,4 @@ metadata:
   namespace: ldap-group-sync
 data:
   whitelist.txt: |
-    cn=openshift-cluster-admins-prod,cn=groups,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com
-    cn=openshift-cluster-backend-admins,cn=groups,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com
-    cn=openshift-cluster-frontend-admins,cn=groups,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com
-    cn=openshift-cluster-users,cn=groups,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com
+    CN=REDHAT_ADMINS,OU=Konsalt,DC=konsalt,DC=info
